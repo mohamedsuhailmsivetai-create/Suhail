@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; background: #eef2f3; color: #333; line-height: 1.6;}
+    a {text-decoration: none; color: inherit;}
+
+    /* Header */
+    header {background: #2c3e50; color: #fff; padding: 15px 20px; position: fixed; width: 100%; top: 0; z-index: 100;}
+    header nav {display: flex; justify-content: space-between; align-items: center;}
+    header ul {display: flex; list-style: none;}
+    header ul li {margin: 0 15px;}
+    header ul li a {color: #fff; font-weight: bold;}
+    .menu-toggle {display: none; font-size: 24px; cursor: pointer;}
+
+    /* Hero Section */
+    .hero {height: 100vh; background: #3498db; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff;}
+    .hero img {width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 20px; cursor: pointer; transition: transform 0.3s;}
+    .hero img:hover {transform: scale(1.05);}
+    .hero h1 {font-size: 40px; margin-bottom: 10px;}
+    .hero p {font-size: 18px;}
+
+    /* Sections */
+    section {padding: 60px 20px;}
+    h2 {margin-bottom: 20px; text-align: center; color: #2c3e50;}
+    .skills, .projects, .certificates {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;}
+    .card img {width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px;}
+
+    /* Contact */
+    .contact form {max-width: 400px; margin: auto; display: flex; flex-direction: column;}
+    .contact input, .contact textarea {padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;}
+    .contact button {padding: 10px; background: #2c3e50; color: #fff; border: none; cursor: pointer; border-radius: 5px;}
+    .contact button:hover {background: #34495e;}
+
+    /* Footer */
+    footer {text-align: center; padding: 20px; background: #2c3e50; color: #fff;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      header ul {display: none; flex-direction: column; background: #34495e; position: absolute; top: 60px; right: 0; width: 200px;}
+      header ul.show {display: flex;}
+      .menu-toggle {display: block;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h2>My Portfolio</h2>
+      <span class="menu-toggle">&#9776;</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Profile Picture (clickable) -->
+    <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+    <input type="file" id="fileInput" accept="image/*" style="display:none">
+    <h1>Hello, I'm VIGNESH B </h1>
+    <p>Aspiring Web Developer | Learner | Innovator</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate student eager to explore web development, programming, and creative problem-solving. 
+    This is my digital portfolio showcasing my skills, certificates, and projects.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>HTML</h3><p>Building structured web pages</p></div>
+      <div class="card"><h3>CSS</h3><p>Designing responsive layouts</p></div>
+      <div class="card"><h3>JavaScript</h3><p>Adding interactivity</p></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card"><h3>Portfolio Website</h3><p>A responsive personal portfolio site.</p></div>
+      <div class="card"><h3>Quiz App</h3><p>A fun interactive quiz built with JavaScript.</p></div>
+      <div class="card"><h3>To-do List</h3><p>A task management app with local storage.</p></div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div style="display: flex; flex-wrap: wrap;gap: 20px; justify-content:center;">
+      <div style="text-align: center;">
+        <a href="https://www.credly.com/badges/17277a31-8a7e-4cc6-95dc-65c500d1a025/public_url" target="_blank">
+          <img src="certificate1.png" alt="Web Development Fundamentals" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        </a>
+        <p>Web Development Fundamentals</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="VIGNESH B" required>
+      <input type="email" placeholder="vigneshbsivetai@gmail.com" required>
+      <textarea rows="5" placeholder="9840348790"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Student Portfolio by Vignesh  | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("header ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Smooth scroll
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+        navLinks.classList.remove("show");
+      });
+    });
+
+    // Profile picture upload
+    const profilePic = document.getElementById("profile-pic");
+    const fileInput = document.getElementById("fileInput");
+
+    profilePic.addEventListener("click", () => {
+      fileInput.click(); // Open file dialog when image clicked
+    });
+
+    fileInput.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          profilePic.src = e.target.result; // Replace image with uploaded one
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
